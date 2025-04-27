@@ -29,7 +29,7 @@ const Post = () => {
               <span className="text-xs text-blue-600 bg-blue-100 px-2 py-1 rounded-full">
                 #travel
               </span>
-              <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded-full">
+              <span className="text-xs text-blue-600 bg-blue-100 px-2 py-1 rounded-full">
                 #foodie
               </span>
               <span className="text-xs text-purple-600 bg-purple-100 px-2 py-1 rounded-full">

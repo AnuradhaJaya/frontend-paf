@@ -24,14 +24,14 @@ const LeftMenu = ({ type }) => {
           <span>Activity</span>
         </Link>
         <hr className="border-t-1 border-gray-50 w-36 self-center" />
-        <Link
+        {/* <Link
           to="/"
           className="flex items-center gap-4 p-2 rounded-lg hover:bg-slate-100"
         >
           <img src="/market.png" alt="" width={20} height={20} />
           <span>Marketplace</span>
         </Link>
-        <hr className="border-t-1 border-gray-50 w-36 self-center" />
+        <hr className="border-t-1 border-gray-50 w-36 self-center" /> */}
         <Link
           to="/"
           className="flex items-center gap-4 p-2 rounded-lg hover:bg-slate-100"
@@ -72,14 +72,14 @@ const LeftMenu = ({ type }) => {
           <span>Courses</span>
         </Link>
         <hr className="border-t-1 border-gray-50 w-36 self-center" />
-        <Link
+        {/* <Link
           to="/"
           className="flex items-center gap-4 p-2 rounded-lg hover:bg-slate-100"
         >
           <img src="/lists.png" alt="" width={20} height={20} />
           <span>Lists</span>
         </Link>
-        <hr className="border-t-1 border-gray-50 w-36 self-center" />
+        <hr className="border-t-1 border-gray-50 w-36 self-center" /> */}
         <Link
           to="/"
           className="flex items-center gap-4 p-2 rounded-lg hover:bg-slate-100"
