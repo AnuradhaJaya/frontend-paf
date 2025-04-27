@@ -6,12 +6,12 @@ import { Route, Routes } from "react-router-dom";
 import Home from "../Home/HomePage";
 const Authenticatio = () => {
   return (
-    <di>
-      <div id="login" className="bg-green/30">
+    <div>
+      <div id="login" className="bg-transparent  w-full">
         <div className="full-width flex">
-          <div className="hidden flex-[1.2] lg:block">
+          <div className="hidden flex-[1.5] lg:block">
             <img
-              className="ml-[200px] w-[850px]"
+              className=" w-[850px] h-[100vh] object-cover"
               src="assets/signin.png"
               alt="Agon"
             />
@@ -19,7 +19,7 @@ const Authenticatio = () => {
           <div className="flex-1 bg-bg-2 text-center grid place-items-center py-[50px]">
             <div className="max-w-[800px]">
               <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Login />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/registration" element={<Registration />} />
               </Routes>
@@ -32,14 +32,14 @@ const Authenticatio = () => {
           id="backToTop"
         >
           <a
-            className="rounded-full bg-green-900 grid place-items-center w-[48px] h-[48px]"
+            className="rounded-full bg-blue-900 grid place-items-center w-[48px] h-[48px]"
             href="#top"
           >
             <img src="assets/images/icons/icon-up.svg" alt="to top icon" />
           </a>
         </div>
       </div>
-    </di>
+    </div>
   );
 };
 

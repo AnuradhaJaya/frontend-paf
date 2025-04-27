@@ -8,14 +8,11 @@ module.exports = {
         montserrat: ["Montserrat", "sans-serif"], // Keep Montserrat for specific use
       },
       colors: {
-        "c-green": {
-          100: "#87C38F",
-          300: "#00A674",
-          600: "#28A745",
-          900: "#006442", // Darker version for hover effect
-        },
         "c-blue": {
-          100: "#90B5B3",
+          100: "#87B8C3", // Light blue (was light green)
+          300: "#0074A6", // Medium blue (was medium green)
+          600: "#2845A7", // Blue (was green)
+          900: "#003B64", // Dark blue (was dark green)
         },
         "c-yellow": {
           100: "#FFD700",
