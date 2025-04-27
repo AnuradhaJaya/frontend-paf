@@ -1,8 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const UserMediaCard = ({ userId }: { userId: String }) => {
+const UserMediaCard = () => {
   const mediaUrls = [
     "https://images.pexels.com/photos/8940023/pexels-photo-8940023.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
     "https://images.pexels.com/photos/8940023/pexels-photo-8940023.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
@@ -26,10 +25,9 @@ const UserMediaCard = ({ userId }: { userId: String }) => {
       <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
         {mediaUrls.map((url, index) => (
           <div key={index} className="relative aspect-square rounded-lg overflow-hidden group cursor-pointer">
-            <Image
+            <img
               src={url}
               alt={`media-${index}`}
-              fill
               className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
           </div>

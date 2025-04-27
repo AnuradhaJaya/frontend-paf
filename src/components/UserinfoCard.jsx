@@ -1,8 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const UserinfoCard = ({ userId }: { userId: string }) => {
+const UserinfoCard = () => {
   return (
     <div className="p-6 bg-white rounded-2xl shadow-lg text-sm flex flex-col gap-6">
       {/* Header */}
@@ -30,19 +29,19 @@ const UserinfoCard = ({ userId }: { userId: string }) => {
       {/* Details */}
       <div className="flex flex-col gap-3 text-gray-600 text-sm">
         <div className="flex items-center gap-2">
-          <Image src="/map.png" alt="Location" width={18} height={18} />
+          <img src="/map.png" alt="Location" width={18} height={18} />
           <span>
             Lives in <span className="font-medium">Kandy</span>
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <Image src="/school.png" alt="School" width={18} height={18} />
+          <img src="/school.png" alt="School" width={18} height={18} />
           <span>
             Studied at <span className="font-medium">Royal College</span>
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <Image src="/work.png" alt="Workplace" width={18} height={18} />
+          <img src="/work.png" alt="Workplace" width={18} height={18} />
           <span>
             Works at <span className="font-medium">Google Inc.</span>
           </span>
@@ -52,7 +51,7 @@ const UserinfoCard = ({ userId }: { userId: string }) => {
       {/* Links & Join Date */}
       <div className="flex justify-between items-center text-gray-500 text-sm flex-wrap gap-2">
         <div className="flex items-center gap-2">
-          <Image src="/link.png" alt="Website" width={16} height={16} />
+          <img src="/link.png" alt="Website" width={16} height={16} />
           <Link
             href="https://anu.dev"
             className="text-blue-600 hover:underline font-medium"
@@ -61,7 +60,7 @@ const UserinfoCard = ({ userId }: { userId: string }) => {
           </Link>
         </div>
         <div className="flex items-center gap-2">
-          <Image src="/date.png" alt="Joined Date" width={16} height={16} />
+          <img src="/date.png" alt="Joined Date" width={16} height={16} />
           <span>
             Joined <span className="font-medium">December 2016</span>
           </span>
