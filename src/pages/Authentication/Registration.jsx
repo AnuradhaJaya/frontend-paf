@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import * as Yup from "yup";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const initialValues = {
   email: "",
@@ -19,12 +20,34 @@ const validationSchema = Yup.object({
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
 
+  const navigate = useNavigate();
+
   const handleSubmit = (values) => {
     console.log(values); // Correct way: values from Formik
   };
 
   return (
     <div>
+      <h2 className="font-bold font-chivo text-[40px] leading-[30px] md:text-heading-3 mb-[50px]">
+        Let’s join us
+      </h2>
+      <button type="button">
+        <div className="flex items-center z-10 relative transition-all duration-200 group py-[13px] md:px-[120px] px-[80px] rounded-md bg-white text-gray-500 hover:text-gray-900 flex-row-reverse w-fit mb-[30px]">
+          <span className="block text-inherit w-full h-full rounded-md text-md font-chivo font-semibold">
+            Sign Up with Google
+          </span>
+          <img
+            className="mr-5"
+            src="assets/images/icons/Icon-google.svg"
+            alt="google icon"
+          />
+        </div>
+      </button>
+      <div className="flex items-center justify-center gap-[7px] mb-[25px]">
+        <div className="bg-gray-300 w-[50px] h-[2px]"></div>
+        <p className="text-text text-gray-500">Sign up with Google</p>
+        <div className="bg-gray-300 w-[50px] h-[2px]"></div>
+      </div>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -134,8 +157,13 @@ const Registration = () => {
             </button>
 
             <div className="flex gap-2">
-              <p className="text-text text-gray-500">Don't have an account?</p>
-              <div className="text-c-green-900 hover:opacity-70">
+              <p className="text-text text-gray-500">
+                Already have an account?
+              </p>
+              <div
+                className="text-c-green-900 hover:opacity-70 hover:cursor-pointer"
+                onClick={() => navigate("/login")} 
+              >
                 <p className="text-text">Sign up</p>
               </div>
             </div>

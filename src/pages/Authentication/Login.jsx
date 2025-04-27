@@ -3,19 +3,27 @@ import React, { useState } from "react";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 const initialValues = {
   email: "",
   password: "",
 };
 
+
 const validationSchema = Yup.object({
   email: Yup.string().email("Invalid email").required("Required"),
-  password: Yup.string().min(6, "Password must be at least 6 characters").required("Required"),
+  password: Yup.string()
+    .min(6, "Password must be at least 6 characters")
+    .required("Required"),
 });
+
+
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleSubmit = (values) => {
     console.log(values); // Correct way: values from Formik
@@ -23,6 +31,26 @@ const Login = () => {
 
   return (
     <div>
+      <h2 className="font-bold font-chivo text-[40px] leading-[30px] md:text-heading-3 mb-[50px]">
+        Welcome back.
+      </h2>
+      <button type="button">
+        <div className="flex items-center z-10 relative transition-all duration-200 group py-[13px] md:px-[120px] px-[80px] rounded-md bg-white text-gray-500 hover:text-gray-900 flex-row-reverse w-fit mb-[30px]">
+          <span className="block text-inherit w-full h-full rounded-md text-md font-chivo font-semibold">
+            Sign In with Google
+          </span>
+          <img
+            className="mr-5"
+            src="assets/images/icons/Icon-google.svg"
+            alt="google icon"
+          />
+        </div>
+      </button>
+      <div className="flex items-center justify-center gap-[7px] mb-[25px]">
+        <div className="bg-gray-300 w-[50px] h-[2px]"></div>
+        <p className="text-text text-gray-500">Or, sign in with your email</p>
+        <div className="bg-gray-300 w-[50px] h-[2px]"></div>
+      </div>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -40,7 +68,11 @@ const Login = () => {
                 placeholder="Your email *"
                 name="email"
               />
-              <ErrorMessage name="email" component="div" className="text-red-500 text-sm mt-1" />
+              <ErrorMessage
+                name="email"
+                component="div"
+                className="text-red-500 text-sm mt-1"
+              />
             </div>
 
             <div className="relative mb-6 last-of-type:mb-4">
@@ -51,7 +83,11 @@ const Login = () => {
                 id="password"
                 placeholder="Password *"
               />
-              <ErrorMessage name="password" component="div" className="text-red-500 text-sm mt-1" />
+              <ErrorMessage
+                name="password"
+                component="div"
+                className="text-red-500 text-sm mt-1"
+              />
               <button
                 type="button"
                 className="absolute top-1/2 right-[12px] transform -translate-y-1/2 text-gray-500 hover:text-green-900"
@@ -80,7 +116,10 @@ const Login = () => {
 
             <div className="flex gap-2">
               <p className="text-text text-gray-500">Don't have an account?</p>
-              <div className="text-c-green-900 hover:opacity-70">
+              <div
+                className="text-c-green-900 hover:opacity-70 hover:cursor-pointer"
+                onClick={() => navigate("/registration")} 
+              >
                 <p className="text-text">Sign up</p>
               </div>
             </div>
